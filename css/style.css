@@ -1,0 +1,86 @@
+.block-checkbox{
+    position: absolute;
+    margin-left:5px;
+}
+
+.block{
+    margin-left:30px;
+    margin-bottom:30px;
+    text-align: center;
+    border: 1px solid black;
+    width:90%;
+}
+
+.one-block{
+    margin-top:10px;
+    padding-bottom:10px;
+}
+
+.top-block{
+    margin-left:30px;
+}
+
+.right-block{
+    float:right;
+    margin-right:30px;
+}
+
+hr{
+    margin-left:40px;
+    margin-right:40px;
+}
+
+.select_submit{
+    margin-left:30px;
+    cursor: pointer;
+}
+
+.main{
+    margin-top:20px;
+}
+
+.add-top{
+    margin-left:30px;
+}
+
+.add-top div{
+    padding-top:5px;
+}
+
+.add-top input{
+    margin-left:30px;
+}
+
+input[name=scu]{
+    margin-left:70px;
+}
+
+input[name=price]{
+    margin-left:62px;
+}
+
+.select-add{
+    margin-top:50px;
+}
+
+.select-add-product{
+    margin-left: 70px;
+}
+
+.add-select-result{
+    margin:30px 0 0 45px;
+}
+
+.add-select-result input{
+    margin-left:30px;
+}
+
+.success{
+    margin-left:30px;
+    color:green;
+}
+
+.error, .error-scu, .error-name, .error-price, .error-type{
+    margin-left:30px;
+    color:red;
+}
