@@ -15,16 +15,16 @@ class Db
 {
     private static $instance;
     private $connection;
-    private $host = 'localhost';
-    private $user = 'root';
-    private $password = 'rtvktp20';
-    private $database = 'tehnodom';
+    private $host;
+    private $user;
+    private $password;
+    private $database;
 
     public function __construct()
     {
         $dotenv = Dotenv::create($_SERVER['DOCUMENT_ROOT']);
         $dotenv->load();
-        $this->host = getenv('DB_CONNECTION');
+        $this->host = getenv('DB_HOST');
         $this->database = getenv('DB_DATABASE');
         $this->user = getenv('DB_USERNAME');
         $this->password = getenv('DB_PASSWORD');
