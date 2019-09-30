@@ -17,7 +17,7 @@
 </div>
 <hr>
 <div class="row_main">
-    <?$i = 0;while($row = mysqli_fetch_assoc($params)){?>
+    <?$i = 0;foreach($params as $row){?>
         <?if($i == 0){?>
         <div class="col-xl-12">
             <div class="row">
@@ -31,10 +31,11 @@
                             <input type="checkbox" value="<?=$row['id'];?>">
                         </div>
                         <div class="one-block">
+                            <div><?=$model->type_products[$row['type_product']];?></div>
                             <div><?=$row['scu'];?></div>
                             <div><?=$row['name'];?></div>
                             <div><?=$row['price'];?></div>
-                            <div><?=$row['type'];?></div>
+                            <div><?=$model->types[$row['type_product']];?>: <?=$row['type'];?></div>
                         </div>
                     </div>
                 </div>

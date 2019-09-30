@@ -20,7 +20,7 @@ class Router
 
     public function run()
     {
-        if(empty($this->route[0])){
+        if(empty($_SERVER['REQUEST_URI']) || $_SERVER['REQUEST_URI'] == '/'){
             $class = new SiteController();
             $class->Index();
             return;

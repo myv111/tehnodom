@@ -8,10 +8,10 @@ class SiteController extends Controller
 {
     public function Index()
     {
-        $products = new Products();
-        $products = $products->get();
+        $product = new Products();
+        $products = $product->get();
 
-        $this->view('index', $products);
+        $this->view('index', $products, $product);
     }
 
     public function Addproducts()

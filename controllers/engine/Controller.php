@@ -10,7 +10,7 @@ namespace app\controllers\engine;
 
 class Controller
 {
-    public function view($view, $params = null)
+    public function view($view, $params = null, $model = null)
     {
         $content = "views/$view.php";
         require_once "views/layouts/main.php";

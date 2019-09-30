@@ -41,9 +41,14 @@ class Model
                 if($v == 'unique'){
                     $this->connect();
                     $query = "SELECT * FROM products WHERE $k = '".$model[$k]."'";
-                    $result = mysqli_query($this->connect, $query);
-                    if(mysqli_num_rows($result))
+                    $result = $this->connect->prepare($query);
+                    $result->execute();
+                    if($result->fetchColumn())
                         $this->error[$k] = $k." должно быть уникальным!";
+                }
+                if(is_int($v)){
+                    if(iconv_strlen($model[$k]) > $v)
+                        $this->error[$k] = $k." должно содержать $v символов!";
                 }
             }
         }
