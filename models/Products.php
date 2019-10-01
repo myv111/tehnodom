@@ -23,6 +23,7 @@ class Products extends Model
         1 => 'DVD диск',
         2 => 'Книга',
         3 => 'Мебель',
+//        4 => 'Телевизор',
     ];
 
     public $types = [
