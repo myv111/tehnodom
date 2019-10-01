@@ -80,7 +80,7 @@ input[name=price]{
     color:green;
 }
 
-.error, .error-scu, .error-name, .error-price, .error-type{
+.error, .error-scu, .error-name, .error-price, .error-type, .error-value, .error-type_product{
     margin-left:30px;
     color:red;
 }

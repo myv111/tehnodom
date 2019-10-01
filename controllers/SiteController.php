@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use app\controllers\engine\Controller;
 use app\models\Products;
+use app\models\ProductsOptions;
 
 class SiteController extends Controller
 {
@@ -31,7 +32,10 @@ class SiteController extends Controller
             die;
         }
 
-        $this->view('add-products');
+        $data['products_options_type'] = ProductsOptions::$products_options_type;
+        $data['type_products'] = Products::$type_products;
+
+        $this->view('add-products', $data);
     }
 
     public function Deleteproduct()

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Сен 30 2019 г., 13:17
+-- Время создания: Окт 01 2019 г., 12:02
 -- Версия сервера: 5.7.27-0ubuntu0.18.04.1
 -- Версия PHP: 7.2.19-0ubuntu0.18.04.2
 
@@ -31,30 +31,21 @@ CREATE TABLE `products` (
   `scu` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `price` int(11) NOT NULL,
-  `type` varchar(255) NOT NULL,
   `type_product` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Дамп данных таблицы `products`
+-- Структура таблицы `products_options`
 --
 
-INSERT INTO `products` (`id`, `scu`, `name`, `price`, `type`, `type_product`) VALUES
-(1, 'dsgdsgds', 'DVD1', 500, '1', 1),
-(3, '1', '2', 3, '5', 1),
-(7, '33', '2', 3, '4', 3),
-(11, '3333', '2', 3, '4', 3),
-(12, '111', '1', 1, '1', 3),
-(20, '34324s', '666', 222, '555', 2),
-(21, '34324ss', '666', 222, '555', 2),
-(22, '34324ssa', '666', 222, '555', 1),
-(24, '34324ssaa', '666', 222, '555', 3),
-(25, 'dddd', 'safsaf', 43646, '333', 3),
-(26, 'dddda', 'safsaf', 43646, '333', 2),
-(27, '4444', '44', 44, '6666', 1),
-(28, '444', '444', 444, '555', 1),
-(50, 'Ñ„Ñ‹Ð²Ñ‹Ñ„Ð²', 'Ñ„Ñ‹Ð°Ñ‹Ñ„Ð°', 4000, 'Ñ„Ñ‹Ð°Ñ„Ñ‹Ð°Ñ‹Ñ„Ð°', 3),
-(57, '4444s', 'asf', 4444, 'asfsaf', 3);
+CREATE TABLE `products_options` (
+  `id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `type` int(11) NOT NULL,
+  `value` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Индексы сохранённых таблиц
@@ -68,6 +59,13 @@ ALTER TABLE `products`
   ADD UNIQUE KEY `scu` (`scu`);
 
 --
+-- Индексы таблицы `products_options`
+--
+ALTER TABLE `products_options`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `product_id` (`product_id`);
+
+--
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
@@ -75,7 +73,22 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT для таблицы `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
+-- AUTO_INCREMENT для таблицы `products_options`
+--
+ALTER TABLE `products_options`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `products_options`
+--
+ALTER TABLE `products_options`
+  ADD CONSTRAINT `products_options_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

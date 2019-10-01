@@ -39,13 +39,9 @@ $('.add_product').on('click', function () {
             if(response.success == 1){
                 $('.success').show();
                 //$('.error').hide();
-                $('input[name=scu]').val('');
-                $('input[name=name]').val('');
-                $('input[name=price]').val('');
-                $('input[name=scu]').val('');
-                $('input[name=type1]').val('');
-                $('input[name=type2]').val('');
-                $('input[name=type3]').val('');
+                $('.form_model').val('');
+                $('.error-value').html('');
+                $('.error-type_product').html('');
                 $('.error-scu').html('');
                 $('.error-name').html('');
                 $('.error-price').html('');
@@ -55,6 +51,8 @@ $('.add_product').on('click', function () {
             }else{
                 $('.success').hide();
                 //$('.error').show();
+                $('.error-value').html('');
+                $('.error-type_product').html('');
                 $('.error-scu').html('');
                 $('.error-name').html('');
                 $('.error-price').html('');

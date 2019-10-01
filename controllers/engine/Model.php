@@ -38,6 +38,10 @@ class Model
                     if(empty($model[$k]))
                         $this->error[$k] = $k." нужно заполнить!";
                 }
+                if($v == 'required_all'){
+                    if(empty($model[$k]))
+                        $this->error[$k] = "Все поля нужно заполнить!";
+                }
                 if($v == 'unique'){
                     $this->connect();
                     $query = "SELECT * FROM products WHERE $k = '".$model[$k]."'";

@@ -17,7 +17,7 @@
 </div>
 <hr>
 <div class="row_main">
-    <?$i = 0;foreach($params as $row){?>
+    <?$i = 0;foreach($params as $k => $v){?>
         <?if($i == 0){?>
         <div class="col-xl-12">
             <div class="row">
@@ -25,17 +25,25 @@
         <div class="col-xl-12">
             <div class="row">
         <?}?>
-                <div class="col-xl-3 main-block id<?=$row['id'];?>">
+                <div class="col-xl-3 main-block id<?=$k;?>">
                     <div class="block">
                         <div class="block-checkbox">
-                            <input type="checkbox" value="<?=$row['id'];?>">
+                            <input type="checkbox" value="<?=$k;?>">
                         </div>
                         <div class="one-block">
-                            <div><?=$model->type_products[$row['type_product']];?></div>
-                            <div><?=$row['scu'];?></div>
-                            <div><?=$row['name'];?></div>
-                            <div><?=$row['price'];?></div>
-                            <div><?=$model->types[$row['type_product']];?>: <?=$row['type'];?></div>
+                            <div><?=$model::$type_products[$v['parent']['type_product']];?></div>
+                            <div><?=$v['parent']['scu'];?></div>
+                            <div><?=$v['parent']['name'];?></div>
+                            <div><?=$v['parent']['price'];?></div>
+                            <div>
+<!--                                --><?//=$model->types[$v['parent']['type_product']];?><!--:-->
+                                <?$products_options_type = \app\models\ProductsOptions::$products_options_type[$v['parent']['type_product']];?>
+                                <?foreach($v['child'] as $child){?>
+                                    <?
+                                        echo $products_options_type[$child['type']].': '.$child['value'].'<br />';
+                                    ?>
+                                <?}?>
+                            </div>
                         </div>
                     </div>
                 </div>
