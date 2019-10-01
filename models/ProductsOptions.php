@@ -34,9 +34,9 @@ class ProductsOptions extends Model
             1 => 'Длина',
             2 => 'Ширина',
             3 => 'Высота',
-//            5 => 'Длина1',
-//            6 => 'Ширина1',
-//            7 => 'Высота1',
+//            4=> 'Длина1',
+//            5 => 'Ширина1',
+//            6 => 'Высота1',
         ],
 //        4 => [
 //            1 => 'Диагональ',
@@ -45,7 +45,7 @@ class ProductsOptions extends Model
         'type'=> [
             3 => [
                 [1, 2, 3, 'name' => 'Размеры (HxWxL)', 'separator' => 'x'],
-//                [6, 7, 'name' => 'XXX', 'separator' => ' ']
+//                [5, 6, 'name' => 'XXX', 'separator' => ' ']
             ],
 //            2 => [
 //                [3, 4, 'name' => 'Количество...', 'separator' => 'xxx'],

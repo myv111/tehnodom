@@ -49,8 +49,9 @@
                 <?foreach($product_array as $k_type => $value_type){?>
                     <label><?=$value_type?></label>
                     <input class="form_model" type="text" name="products_options_type[<?=$k_product_id?>][<?=$k_type?>]">
-                    <div>Краткое описание для DVD</div>
+                    <br />
                 <?}?>
+                <div>Краткое описание для DVD</div>
             </div>
             <?}?>
 <!--            <div class="item-add" style="display: none;" data-id="2">-->
