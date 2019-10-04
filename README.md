@@ -37,19 +37,29 @@ ProductsOptions: <br/>
             1 => 'Диагональ',<br/>
             2 => 'Цвет',<br/>
        ],<br/>
-        'type'=> [<br/>
-            3 => [<br/>
-                [1, 2, 3, 'name' => 'Размеры (HxWxL)', 'separator' => 'x'], //- вывод в views/index.php, 3 - Мебель, с ключами 1, 2 ,3<br/>
-                                                                            //1 => 'Длина', 2 => 'Ширина', 3 => 'Высота',<br/>
-                                                                            //Размеры (HxWxL) - название<br/>
-                                                                            //separator - разделитель<br/>
-                                                                            //Результат вывода например - Размеры (HxWxL): 1x2x3<br/>
-                [5, 6, 'name' => 'XXX', 'separator' => ' ']<br/>
-            ],<br/>
-            2 => [<br/>
-                [3, 4, 'name' => 'Количество...', 'separator' => 'xxx'],<br/>
-            ],<br/>
-        ],<br/>
+        'type'=> [ <br/>
+            3 => [ <br/>
+                [1, 2, 3, 'name' => 'Размеры (HxWxL)', 'separator' => 'x'], //- вывод в views/index.php, 3 - Мебель, с ключами 1, 2 ,3 <br/>
+                                                                            //1 => 'Длина', 2 => 'Ширина', 3 => 'Высота', 
+                                                                            <br/>
+                                                                            //Размеры (HxWxL) - название 
+                                                                            <br/>
+                                                                            //separator - разделитель 
+                                                                            <br/>
+                                                                            //Результат вывода например - Размеры (HxWxL): 1x2x3 
+                                                                            <br/>
+                [5, 6, 'name' => 'XXX', 'separator' => ' ']
+                <br/>
+            ],
+            <br/>
+            2 => [
+            <br/>
+                [3, 4, 'name' => 'Количество...', 'separator' => 'xxx'],
+                <br/>
+            ],
+            <br/>
+        ],
+        <br/>
     ];
-
+https://github.com/myv111/tehnodom/blob/master/models/ProductsOptions.php
 
